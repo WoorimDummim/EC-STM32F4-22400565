@@ -37,8 +37,6 @@ void GPIO_init(PinName_t pinName, uint32_t mode){
 
 	// You can also make and use a more general function of
 	// void RCC_GPIO_enable(GPIO_TypeDef *Port); 
-	
-
 	GPIO_mode(pinName, mode);
 }
 
@@ -79,7 +77,8 @@ void GPIO_pupd(PinName_t pinName, uint32_t pupd){
 	unsigned int pin;
 	ecPinmap(pinName,&Port,&pin);
 
-   	Port->PUPDR &= (pupd<<(2 * pin));
+   	Port->PUPDR &= ~(3UL << (2 * pin));
+   	Port->PUPDR |= (pupd<<(2 * pin));
 }
 
 void GPIO_write(PinName_t pinName, uint32_t Output){

@@ -1,0 +1,1 @@
+"# EC-STM32F4-22400565"  initgit add README.mdgit commit -m "first commit"git branch -M maingit remote add origin https://github.com/WoorimDummim/EC-STM32F4-22400565git push -u origin main
