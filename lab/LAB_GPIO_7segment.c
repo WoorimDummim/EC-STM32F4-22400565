@@ -49,20 +49,20 @@ int main(void) {
         FND_display(numDisplay2);
         delay_ms_HSI(1);	
     }
-        */
-       // Problem 2
+    */
+    // Problem 2
     while (1) {
-    FND_select(selectFND);
-    buttonState = GPIO_read(button_pin);
-	if(buttonState == 0 && prev_buttonState == 1) {
-         Count++;
-        FND_display(Count % 10);
-        prev_buttonState = buttonState;
-    }
-    else if(buttonState == 1) {
-        FND_display(Count % 10);
-        prev_buttonState = 1;
-    }
+        FND_select(selectFND);
+        buttonState = GPIO_read(button_pin);
+		if(buttonState == 0 && prev_buttonState == 1) {
+            Count++;
+            FND_display(Count % 10);
+            prev_buttonState = buttonState;
+        }
+        else if(buttonState == 1) {
+            FND_display(Count % 10);
+            prev_buttonState = 1;
+        }
     }
 }
 
