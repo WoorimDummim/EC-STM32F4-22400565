@@ -4,7 +4,7 @@
 
 **Author/Partner:** Woorim-Lee
 
-**Demo Video:** [[EC 26-2] LAB (GPIO Digital InOut)](https://youtu.be/DDQTUgvnaio)
+**Demo Video:** [[EC 26-2] LAB (GPIO Digital InOut)](https://youtu.be/pcD9_yLGIN8)
 
 **PDF Version:** [LAB_GPIO_Digital_InOut.pdf](./LAB_GPIO_Digital_InOut.pdf)
 
