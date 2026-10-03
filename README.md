@@ -1,54 +1,10 @@
-# Embedded Controller
+## Embedded Controller
 
+**Date:** 2026-09-20
 
+**Author/Partner:** WoorimLee
 
-------
-
-### Embedded Controller by Young-Keun Kim, Handong Global University
-
-
-
-Author: Lee-Woorim
-
-Date: Updated 2023-09-21
-
-------
-
-This is a private github repository for Embedded Controller Class that contains my firmware library files.
-
-## Documentation
-
-
-
-[See here for API documentation](https://github.com/ykkimhgu/EC-student/blob/main/docs/EC_HAL_Documentation.md)
-
-## Contents
-
-
-
-This repository contains
-
-- \include : header and definition files of your own library
-- \docs: documentation for your library
-- \src: assignment source files for main(). Make it private.
-- \lab-tutorial: exercise and tutorial files used in class ** \lab-student ** \lib-student ** \tutorial-student
-
-## Environment
-
-
-
-Program Language: C/C++
-
-IDE/Compiler : Keil uVision 5
-
-OS: WIn10
-
-MCU: STM32F411RE, Nucleo-64
-
-## Installation
-
-
-
-*// Add your notes here*
-
-## Resource
+**Demo Video:** 
+[[EC 26-2] LAB (GPIO Digital InOut)](https://youtu.be/DDQTUgvnaio)
+[[EC 26-2] LAB (GPIO 7segment)](https://youtu.be/reNBhPKHs8o)
+                
