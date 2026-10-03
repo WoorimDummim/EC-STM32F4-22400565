@@ -1,3 +1,14 @@
+/*----------------------------------------------------------------\
+@ Embedded Controller by Young-Keun Kim - Handong Global University
+Author           : Woorim-Lee
+Created          : 05-03-2021
+Modified         : 09-30-2026 
+Language/ver     : C++ in VS Code
+
+Description      : Tutorial 7-segment
+/----------------------------------------------------------------*/
+
+
 #include "ecRCC2.h"
 #include "ecGPIO2.h"
 
