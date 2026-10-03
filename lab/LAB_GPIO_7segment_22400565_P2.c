@@ -28,28 +28,12 @@ void setup(void){
 
 int main(void) {
     setup();
-    /*
-    uint8_t numDisplay1  = 0;
-    uint8_t numDisplay2  = 5;
-    uint8_t selectFND1  = 0;
-    uint8_t selectFND2  = 1;
-    */
 
     int Count = 0;
     int buttonState = 0;
     int prev_buttonState = 1;
     uint8_t selectFND = 0;
 
-    /* Problem 1
-    while (1) {
-        FND_select(selectFND1);
-        FND_display(numDisplay1);
-        delay_ms_HSI(1);             		
-        FND_select(selectFND2);
-        FND_display(numDisplay2);
-        delay_ms_HSI(1);	
-    }
-    */
     // Problem 2
     while (1) {
         FND_select(selectFND);
