@@ -162,14 +162,14 @@ void FND_select_init(PinName_t *selectFND){
 
 // Display a number 0 - 9 only
 void FND_display(uint8_t num){
-	for (int i=0; i<7; i++){
+	for (int i=0; i<8; i++){
 		GPIO_write(_fndPins[i], numberFND[num][i]);
 	}
 }
 
 // Select display: FND0 to FND3
 void FND_select(uint8_t digit){
-	for(int i=0; i<3; i++)
+	for(int i=0; i<4; i++)
 		GPIO_write(_fndSel[i], LOW);
 	GPIO_write(_fndSel[digit], HIGH);
 }

@@ -1,8 +1,8 @@
 /*----------------------------------------------------------------\
 @ Embedded Controller by Young-Keun Kim - Handong Global University
-Author           : [ YOUR NAME GOES HERE !!!!!]
+Author           : Woorim-Lee
 Created          : 05-03-2021
-Modified         : [WRITE THE DATE!!!!]
+Modified         : 09-30-2026
 Language/ver     : C++ in VS Code
 
 Description      : System Clock Library. Distributed to Students for LAB_GPIO
@@ -48,7 +48,7 @@ void RCC_PLL_init() {
 	
 	// Select clock source to PLL
 	RCC->PLLCFGR &= ~RCC_PLLCFGR_PLLSRC; 		// Set source for PLL: clear bits
-	RCC->PLLCFGR |= RCC_PLLCFGR_PLLSRC_HSI; // Set source for PLL: 0 =HSI, 1 = HSE
+	RCC->PLLCFGR |= RCC_PLLCFGR_PLLSRC_HSI;     // Set source for PLL: 0 =HSI, 1 = HSE
 	
 	// Make PLL as 84 MHz
 	// f(VCO clock) = f(PLL clock input) * (PLLN / PLLM) = 16MHz * 84/8 = 168 MHz
