@@ -2,7 +2,7 @@
 @ Embedded Controller by Young-Keun Kim - Handong Global University
 Author           : Woorim-Lee
 Created          : 05-03-2021
-Modified         : 10-01-2026
+Modified         : 10-04-2026
 Language/ver     : C++ in VS Code
 
 Description      : LAB - External Interrupt(EXTI)
@@ -10,31 +10,31 @@ Description      : LAB - External Interrupt(EXTI)
 
 #include "ecSTM32F4v2.h"
 
+#define SW1_PIN    PD_2         // EVAL board JKIT SW1
+#define SW2_PIN    PA_4			// EVAL board JKIT SW2
+#define select_FND1  0
 
-#define LED0_PIN   PB_12 		//EVAL board JKIT LED0
-#define SW2_PIN    PA_4			//EVAL board JKIT SW2
-
-int Count = 0;
-uint8_t selectFND = 0;
+int count = 0;
+int is_paused = 0;
 
 void led_toggle(PinName_t pinName);  // in ecGPIO2.h
 
 // Initialiization 
 void setup(void)
 {
-    // RCC_PLL_init();                 // System Clock = 84MHz
-    // SysTick_init();                 // SysTick Timer Initialization
-    // // Initialize GPIOB_12 for Output
-    // GPIO_init(LED0_PIN, OUTPUT);    // LED0 for EVAL board	
-
-    // // Initialize GPIOA_4 for Input Button
-    // GPIO_init(SW2_PIN, INPUT);  // INPUT for EVAL board
-    // GPIO_pupd(SW2_PIN, EC_PU);  // PULL-UP for EVAL board
-
     MCU_init();
 
-    // Initialize EXTI PA_4
-    EXTI_init(SW2_PIN, FALL, 10);		
+    GPIO_init(SW1_PIN, INPUT);
+    GPIO_init(SW2_PIN, INPUT);
+
+    GPIO_pupd(SW1_PIN, EC_PU);
+    GPIO_pupd(SW2_PIN, EC_PU);
+
+    GPIO_init(select_FND1, OUTPUT);
+
+    // Initialize EXTI SW_PIN
+    EXTI_init(SW1_PIN, FALL, 10);	
+    EXTI_init(SW2_PIN, FALL, 10);	
 }
 
 
@@ -42,22 +42,24 @@ void setup(void)
 int main(void) {
 	setup();
 	while (1){
-        delay_ms(5000);
-        FND_select(selectFND);
-        FND_display(Count % 10);
+        FND_select(select_FND1);
+        FND_display(count % 10);
+
+        if (is_paused == 0) count++;
+        delay_ms(1000);
     }
 }
 
-//핸들러가 두개 들어가야해 Switch1 Switch2 !!
+void EXTI2_IRQHandler(void) {
+	if (is_pending_EXTI(SW1_PIN)) {   
+			count = 0;
+			clear_pending_EXTI(SW1_PIN);
+	}
+}
 
 void EXTI4_IRQHandler(void) {
-
-
 	if (is_pending_EXTI(SW2_PIN)) {   
-			led_toggle(LED0_PIN);
-
-            Count++;
-
-			clear_pending_EXTI(SW2_PIN);
+            is_paused ^= 1;            // toggle is comparision is_paused(current) and 1
+			//clear_pending_EXTI(SW2_PIN);
 	}
 }
