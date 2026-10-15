@@ -2,7 +2,7 @@
 @ Embedded Controller by Young-Keun Kim - Handong Global University
 Author           : Woorim-Lee
 Created          : 05-03-2021
-Modified         : 09-18-2026 [WRITE THE DATE!!!!]
+Modified         : 09-18-2026
 Language/ver     : C++ in VS Code
 
 Description      : GPIO Library. Distributed to Students for LAB_GPIO

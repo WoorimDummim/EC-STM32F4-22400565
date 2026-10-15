@@ -33,7 +33,7 @@ void RCC_GPIOC_enable(void);
 ---------------------------------------------------------------- */
 void RCC_GPIOD_enable(void);
 void RCC_GPIOE_enable(void);
-// void RCC_GPIO_enable(GPIO_TypeDef * GPIOx);
+void RCC_GPIO_enable(GPIO_TypeDef * GPIOx);
 
 
 

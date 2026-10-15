@@ -115,16 +115,21 @@ void RCC_GPIOE_enable()
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOEEN;
 }
 
-
-
-/*---------------------------------------------------------------- 
-                    [EXERCISE]
----------------------------------------------------------------- */
-
-// void RCC_GPIOD_enable(void){
-// 	// RCC Peripheral Clock Enable Register
-// 	// [YOUR CODE GOES HERE !!!!!]
-//}
-
-// void RCC_GPIOE_enable(void){};
-// void RCC_GPIO_enable(GPIO_TypeDef * GPIOx){}
+void RCC_GPIO_enable(GPIO_TypeDef * GPIOx) {
+    
+    if (GPIOx == GPIOA) {
+        RCC->AHB1ENR |= (1UL << 0); 
+    }
+    else if (GPIOx == GPIOB) {
+        RCC->AHB1ENR |= (1UL << 1); 
+    }
+    else if (GPIOx == GPIOC) {
+        RCC->AHB1ENR |= (1UL << 2); 
+    }
+    else if (GPIOx == GPIOD) {
+        RCC->AHB1ENR |= (1UL << 3); 
+    }
+    else if (GPIOx == GPIOE) {
+        RCC->AHB1ENR |= (1UL << 4); 
+    }
+}
