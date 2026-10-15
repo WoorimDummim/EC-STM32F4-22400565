@@ -6,7 +6,7 @@
 
 **Demo Video:** [[EC 26-2] LAB (GPIO Digital InOut)](https://youtu.be/pcD9_yLGIN8)
 
-**PDF Version:** [LAB_GPIO_Digital_InOut.pdf](./LAB_GPIO_Digital_InOut.pdf)
+**PDF Version:** [LAB_GPIO_Digital_InOut.pdf](./LAB_GPIO_Digital_InOut_22400565_WoorimLee.pdf)
 
 
 
@@ -115,16 +115,15 @@ void loop() {
 
 Pressing the button successfully turned on LED2.
 
-<img src="../../LAB_GPIO_Digital_InOut_22400565/report/img/KakaoTalk_20260920_020742679_01.jpg" alt="KakaoTalk_20260920_020742679_01" style="zoom:15%;" />
+<img src="img/KakaoTalk_20260920_020742679_01.jpg" alt="KakaoTalk_20260920_020742679_01" style="zoom:15%;" />
 
-<img src="../../LAB_GPIO_Digital_InOut_22400565/report/img/KakaoTalk_20260920_020742679.jpg" alt="KakaoTalk_20260920_020742679" style="zoom:15%;" />
+<img src="img/KakaoTalk_20260920_020742679.jpg" alt="KakaoTalk_20260920_020742679" style="zoom:15%;" />
 
 <center>Fig 1. Pressing BT1 turned ON LED0</center>
 
 
 
-
-#### Consideration
+#### Discussion
 
 **Arduino API Limitations:** Confirmed platform constraints where the PC13 pin could not be directly controlled via the provided library, requiring a physical bypass to the D3 pin using a jumper wire.
 
@@ -247,7 +246,7 @@ uint32_t GPIO_read(PinName_t pinName){
 
 
 
-#### Consideration
+#### Discussion
 
 **Safe Bitwise Operations:** Learned the critical importance of the Read-Modify-Write sequence. It is essential to clear specific bits using `&= ~` before setting them with `|=` to prevent unintended modifications to adjacent pins sharing the same register.
 
@@ -348,15 +347,15 @@ int main(void) {
 
 Blocking the light from the Photodetector successfully toggled LED0 on.
 
-<img src="../../LAB_GPIO_Digital_InOut_22400565/report/img/EC_LAB1_Pr2_1.jpg" alt="EC_LAB1_Pr2_1" style="zoom:15%;" />
+<img src="img/EC_LAB1_Pr2_1.jpg" alt="EC_LAB1_Pr2_1" style="zoom:15%;" />
 
-<img src="../../LAB_GPIO_Digital_InOut_22400565/report/img/EC_LAB1_Pr2_2.jpg" alt="EC_LAB1_Pr2_2" style="zoom:15%;" />
+<img src="img/EC_LAB1_Pr2_2.jpg" alt="EC_LAB1_Pr2_2" style="zoom:15%;" />
 
 <center>Fig 2. LED0 turned ON when the photodetector is blocked.</center>
 
 
 
-#### Consideration
+#### Discussion
 
 **Digital Sensor Integration:** Confirmed that the photodetector module successfully converts analog environmental data (light intensity) into a discrete digital signal (HIGH/LOW) using its built-in comparator, allowing the MCU to process it via the PA_0 pin.
 
@@ -471,21 +470,21 @@ int main(void) {
 
 It was observed that the LEDs toggled sequentially in the order of LED0 -> LED1 -> LED2 -> LED3 -> LED0.
 
-<img src="../../LAB_GPIO_Digital_InOut_22400565/report/img/pr3_1.jpg" alt="pr3_1" style="zoom:15%;" />
+<img src="img/pr3_1.jpg" alt="pr3_1" style="zoom:15%;" />
 
-<img src="../../LAB_GPIO_Digital_InOut_22400565/report/img/pr3_2.jpg" alt="pr3_2" style="zoom:15%;" />
+<img src="img/pr3_2.jpg" alt="pr3_2" style="zoom:15%;" />
 
-<img src="../../LAB_GPIO_Digital_InOut_22400565/report/img/pr3_3.jpg" alt="pr3_3" style="zoom:15%;" />
+<img src="img/pr3_3.jpg" alt="pr3_3" style="zoom:15%;" />
 
-<img src="../../LAB_GPIO_Digital_InOut_22400565/report/img/pr3_4.jpg" alt="pr3_4" style="zoom:15%;" />
+<img src="img/pr3_4.jpg" alt="pr3_4" style="zoom:15%;" />
 
-<img src="../../LAB_GPIO_Digital_InOut_22400565/report/img/pr3_5.jpg" alt="pr3_5" style="zoom:15%;" />
+<img src="img/pr3_5.jpg" alt="pr3_5" style="zoom:15%;" />
 
 <center>Fig 3. Sequential LED toggling operation using user button B1.</center>
 
 
 
-#### Consideration
+#### Discussion
 
 **Cyclic State Management:** Successfully implemented sequential logic using a counter variable and the modulo operator (`count % 4`), which is an efficient and clean method to handle cyclical state transitions without complex `if-else` structures.
 
@@ -495,7 +494,7 @@ It was observed that the LEDs toggled sequentially in the order of LED0 -> LED1 
 
 ---------
 
-#### Discussion
+### Discussion
 
 **1. Find out a typical solution for software debouncing and hardware debouncing.**
 

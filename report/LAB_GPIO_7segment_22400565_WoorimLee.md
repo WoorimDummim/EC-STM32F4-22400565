@@ -6,7 +6,7 @@
 
 **Demo Video:** [[EC 26-2] LAB (GPIO 7segment)](https://youtu.be/reNBhPKHs8o)
 
-**PDF version:**
+**PDF version:** [LAB_GPIO_7segment.pdf](./LAB_GPIO_7segment_22400565_WoorimLee.pdf)
 
 
 
@@ -47,12 +47,12 @@ In this lab, you are required to create a simple program to control a 7-segment 
 |                | Set Pin5~9 mode = Output     | GPIOB->MODER \|=(0x155<<(5*2)) |
 | Port X Pin Y   | Clear Pin Y mode             | GPIOX->MODER &=~(3<<(Y*2))     |
 |                | Set Pin Y mode = Output      | GPIOX->MODER \|=(1<<(Y*2))     |
-| Port B Pin5    | Set Pin5 otype=push-pull     | GPIOB->OTYPER =~(1<<5)         |
-| Port B PinY    | Set PinY otype=push-pull     | GPIOB-> OTYPER =~(1<<Y)        |
+| Port B Pin5    | Set Pin5 otype=push-pull     | GPIOB->OTYPER &=~(1<<5)        |
+| Port B PinY    | Set PinY otype=push-pull     | GPIOB-> OTYPER &=~(1<<Y)       |
 | Port B Pin5    | Set Pin5 ospeed=Fast         | GPIOB->OSPEEDR \|=(2<<(5*2))   |
 | Port B PinY    | Set PinY ospeed=Fast         | GPIOB-> OSPEEDR \|=(2<<(Y*2))  |
-| Port B Pin 5   | Set Pin5 PUPD=no pullup/down | GPIOB->OTYPER =~(3<<(5*2))     |
-| Port B Pin Y   | Set PinY PUPD=no pullup/down | GPIOB-> OTYPER =~(3<<(Y*2))    |
+| Port B Pin 5   | Set Pin5 PUPD=no pullup/down | GPIOB->PUPDR &=~(3<<(5*2))     |
+| Port B Pin Y   | Set PinY PUPD=no pullup/down | GPIOB-> PUPDR &=~(3<<(Y*2))    |
 
 
 
@@ -253,7 +253,7 @@ int main(void) {
 
 #### Results
 
-<img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432.jpg" alt="KakaoTalk_20260921_003617432" style="zoom:15%;" />
+<img src="img/KakaoTalk_20260921_003617432.jpg" alt="KakaoTalk_20260921_003617432" style="zoom:15%;" />
 
 <center>Verification of the 7-segment display operation.</center>
 
@@ -342,11 +342,11 @@ This code implements a single-digit counter controlled by a push-button. It util
 
 #### Results
 
-| <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_01.jpg" style="zoom:15%;" />(a) | <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_02.jpg" alt="KakaoTalk_20260921_003617432_02" style="zoom:15%;" />(b) | <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_03.jpg" style="zoom:15%;" />(c) |
+| <img src="img/KakaoTalk_20260921_003617432_01.jpg" style="zoom:15%;" />(a) | <img src="img/KakaoTalk_20260921_003617432_02.jpg" alt="KakaoTalk_20260921_003617432_02" style="zoom:15%;" />(b) | <img src="img/KakaoTalk_20260921_003617432_03.jpg" style="zoom:15%;" />(c) |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_04.jpg" alt="KakaoTalk_20260921_003617432_04" style="zoom:15%;" />**(d)** | <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_05.jpg" alt="KakaoTalk_20260921_003617432_05" style="zoom:15%;" />**(e)** | <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_06.jpg" alt="KakaoTalk_20260921_003617432_06" style="zoom:15%;" />**(f)** |
-| <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_07.jpg" alt="KakaoTalk_20260921_003617432_07" style="zoom:15%;" />**(g)** | <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_08.jpg" alt="KakaoTalk_20260921_003617432_08" style="zoom:15%;" />**(h)** | <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_09.jpg" alt="KakaoTalk_20260921_003617432_09" style="zoom:15%;" />**(i)** |
-| <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_10.jpg" alt="KakaoTalk_20260921_003617432_10" style="zoom:15%;" />**(j)** | <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_11.jpg" alt="KakaoTalk_20260921_003617432_11" style="zoom:15%;" />**(k)** | <img src="../../LAB_GPIO_7segment_22400565/report/img/KakaoTalk_20260921_003617432_02.jpg" alt="KakaoTalk_20260921_003617432_02" style="zoom:15%;" />**(l)** |
+| <img src="img/KakaoTalk_20260921_003617432_04.jpg" alt="KakaoTalk_20260921_003617432_04" style="zoom:15%;" />**(d)** | <img src="img/KakaoTalk_20260921_003617432_05.jpg" alt="KakaoTalk_20260921_003617432_05" style="zoom:15%;" />**(e)** | <img src="img/KakaoTalk_20260921_003617432_06.jpg" alt="KakaoTalk_20260921_003617432_06" style="zoom:15%;" />**(f)** |
+| <img src="img/KakaoTalk_20260921_003617432_07.jpg" alt="KakaoTalk_20260921_003617432_07" style="zoom:15%;" />**(g)** | <img src="img/KakaoTalk_20260921_003617432_08.jpg" alt="KakaoTalk_20260921_003617432_08" style="zoom:15%;" />**(h)** | <img src="img/KakaoTalk_20260921_003617432_09.jpg" alt="KakaoTalk_20260921_003617432_09" style="zoom:15%;" />**(i)** |
+| <img src="img/KakaoTalk_20260921_003617432_10.jpg" alt="KakaoTalk_20260921_003617432_10" style="zoom:15%;" />**(j)** | <img src="img/KakaoTalk_20260921_003617432_11.jpg" alt="KakaoTalk_20260921_003617432_11" style="zoom:15%;" />**(k)** | <img src="img/KakaoTalk_20260921_003617432_02.jpg" alt="KakaoTalk_20260921_003617432_02" style="zoom:15%;" />**(l)** |
 
 <center>7-segment display incrementing from 0 to 9 with each button press.</center>
 
