@@ -34,6 +34,12 @@ void setup(void)
 {
 		MCU_init();
 
+		// TU_EXTI
+    	GPIO_init(PB_12, OUTPUT);
+    	// GPIO_init(PC_3, OUTPUT);
+    	GPIO_init(PA_4, INPUT);
+    	GPIO_pupd(PA_4, EC_PU);    
+
 		// Initialize EXTI PA_4
 		EXTI_init(SW2_PIN, FALL, 10);		
 }
