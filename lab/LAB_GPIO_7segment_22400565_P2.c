@@ -32,21 +32,46 @@ int main(void) {
     int Count = 0;
     int buttonState = 0;
     int prev_buttonState = 1;
-    uint8_t selectFND = 0;
+    uint8_t selectFND1 = 0;        // 0 = count / 10;
+    uint8_t selectFND2 = 1;
 
-    // Problem 2
+    // // Problem 2
+    // while (1) {
+    //     FND_select(selectFND1);
+    //     buttonState = GPIO_read(button_pin);
+	// 	if(buttonState == 0 && prev_buttonState == 1) {
+    //         Count++;
+    //         FND_display(Count % 10);
+    //         prev_buttonState = buttonState;
+    //     }
+
+    //     else if(buttonState == 1) {
+    //         FND_display(Count % 10);
+    //         prev_buttonState = 1;
+    //     }
+    // }
+
+    // Problem 2-expend
     while (1) {
-        FND_select(selectFND);
+
+        FND_select(selectFND1);
+        FND_display(Count % 10);
+        delay_ms(5);
+
+        FND_select(selectFND2);
+        FND_display(Count / 10);
+        delay_ms(5);
+
         buttonState = GPIO_read(button_pin);
+    
 		if(buttonState == 0 && prev_buttonState == 1) {
             Count++;
-            FND_display(Count % 10);
             prev_buttonState = buttonState;
+
+            if (Count > 19) Count = 0;
         }
-        else if(buttonState == 1) {
-            FND_display(Count % 10);
-            prev_buttonState = 1;
-        }
+
+        else if(buttonState == 1) prev_buttonState = 1;
     }
 }
 
