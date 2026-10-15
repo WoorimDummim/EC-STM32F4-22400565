@@ -1,6 +1,6 @@
 # Embedded Controller
 
-**Date:** 2026-09-20
+**Date:** 2026-010-15
 
 **Author/Partner:** WoorimLee
 
@@ -14,7 +14,9 @@
 
 ​	Throughout the course, low-level registers are manipulated to implement drivers for GPIO, EXTI, SysTick, Stepper Motors, and UART communication.
 
- ## Repository Structure The workspace is structured to separate custom library headers, lab assignments, and tutorial exercises.
+
+
+**Repository Structure The workspace is structured to separate custom library headers, lab assignments, and tutorial exercises.**
 
 
 
