@@ -55,14 +55,9 @@ void RCC_GPIOA_enable(void);
 void RCC_GPIOB_enable(void);
 void RCC_GPIOC_enable(void);
 
-/*---------------------------------------------------------------- 
-                    [EXERCISE]
----------------------------------------------------------------- */
 void RCC_GPIOD_enable(void);
 void RCC_GPIOE_enable(void);
 // void RCC_GPIO_enable(GPIO_TypeDef * GPIOx);
-
-
 
 #ifdef __cplusplus
 }
@@ -76,7 +71,7 @@ void RCC_GPIOE_enable(void);
 
 #### delay_ms_HSI()
 
-
+Generates a software-based delay in milliseconds utilizing the High-Speed Internal (HSI) clock.
 
 ```
 void delay_ms_HSI(uint32_t ms); 
@@ -84,65 +79,59 @@ void delay_ms_HSI(uint32_t ms);
 
 **Parameters**
 
-- **ms:** 
-
-  
+- **ms:** The amount of time to delay, in milliseconds.
 
 **Example code**
 
 ```c
-
+delay_ms_HSI(1000);  // Delays the program execution for 1000 ms (1 second)
 ```
 
 
 
 #### RCC_HSI_init()
 
+Initializes the system clock to use the 16 MHz High-Speed Internal (HSI) oscillator. It configures the flash latency and updates the global `EC_SYSCLK` variable.
 
-
-```
-void RCC_HSI_init(void);
+```c
+void RCC_HSI_init(void);c
 ```
 
 **Parameters**
 
-- **void:**
-
-  
+- **None**
 
 **Example code**
 
-```
-
+```c
+RCC_HSI_init();  // System clock is now set to 16 MHz
 ```
 
 
 
 #### void RCC_PLL_init()
 
+Initializes the system clock using the Phase-Locked Loop (PLL) to boost the core clock frequency. For the STM32F411RE, this typically configures the system clock to its maximum of 84 MHz.
 
-
-```
+```c
 void RCC_PLL_init(void);
 ```
 
 **Parameters**
 
-- **void:**
-
-  
+- **None**
 
 **Example code**
 
-```
-
+```c
+RCC_PLL_init();  // System clock is now boosted to 84 MHz via PLL
 ```
 
 
 
 #### RCC_GPIOA_enable()
 
-
+Enables the peripheral clock for GPIO Port A by setting the corresponding bit in the RCC AHB1 peripheral clock enable register (`RCC_AHB1ENR`).
 
 ```c
 void RCC_GPIOA_enable(void);
@@ -150,21 +139,19 @@ void RCC_GPIOA_enable(void);
 
 **Parameters**
 
-- **void:**
-
-  
+- **None**
 
 **Example code**
 
-```
-
+```c
+RCC_GPIOA_enable();  // Activates clock for GPIOA
 ```
 
 
 
 #### RCC_GPIOB_enable()
 
-
+Enables the peripheral clock for GPIO Port B.
 
 ```c
 void RCC_GPIOB_enable(void);
@@ -172,21 +159,19 @@ void RCC_GPIOB_enable(void);
 
 **Parameters**
 
-- **void:**
-
-  
+- **None**
 
 **Example code**
 
-```
-
+```c
+RCC_GPIOB_enable();  // Activates clock for GPIOB
 ```
 
 
 
 #### RCC_GPIOC_enable()
 
-
+Enables the peripheral clock for GPIO Port C.
 
 ```c
 void RCC_GPIOC_enable(void);
@@ -194,21 +179,19 @@ void RCC_GPIOC_enable(void);
 
 **Parameters**
 
-- **void:**
-
-  
+- **None**
 
 **Example code**
 
-```
-
+```c
+RCC_GPIOC_enable();  // Activates clock for GPIOC
 ```
 
 
 
 #### RCC_GPIOD_enable()
 
-
+Enables the peripheral clock for GPIO Port D.
 
 ```c
 void RCC_GPIOD_enable(void);
@@ -216,21 +199,19 @@ void RCC_GPIOD_enable(void);
 
 **Parameters**
 
-- **void:**
-
-  
+- **None**
 
 **Example code**
 
-```
-
+```c
+RCC_GPIOD_enable();  // Activates clock for GPIOD
 ```
 
 
 
 #### RCC_GPIOE_enable()
 
-
+Enables the peripheral clock for GPIO Port E.
 
 ```c
 void RCC_GPIOE_enable(void);
@@ -238,13 +219,11 @@ void RCC_GPIOE_enable(void);
 
 **Parameters**
 
-- **void:**
-
-  
+- **None**
 
 **Example code**
 
-```
-
+```c
+RCC_GPIOE_enable();  // Activates clock for GPIOE
 ```
 

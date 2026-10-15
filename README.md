@@ -22,7 +22,7 @@
 
 ## Documentation
 
-[See here for API documentation](https://github.com/ykkimhgu/NumericalProg-student/blob/main/docs/NP_API_Documentation.md)
+[See here for API documentation](https://github.com/WoorimDummim/EC-STM32F4-22400565/tree/main/docs)
 
 
 

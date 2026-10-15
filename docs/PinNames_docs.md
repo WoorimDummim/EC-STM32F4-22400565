@@ -165,7 +165,7 @@ void ecPinmap(PinName_t pinName, GPIO_TypeDef **GPIOx, unsigned int *pin);
 
 #### ecPinmap()
 
-
+Decodes the enumerated `PinName_t` value into its corresponding GPIO port register base address (`GPIO_TypeDef`) and the specific pin number. This function is essential for abstracting hardware-specific register addresses into user-friendly pin names.   
 
 ```
 void ecPinmap(PinName_t pinName, GPIO_TypeDef **GPIOx, unsigned int *pin);
@@ -173,18 +173,20 @@ void ecPinmap(PinName_t pinName, GPIO_TypeDef **GPIOx, unsigned int *pin);
 
 **Parameters**
 
-- **pinName:** 
+- **pinName:** The enumerated pin name to be decoded (e.g., `PA_5`, `PC_13`).
 
-- **GPIOx:**
+- **GPIOx:** A double pointer to a `GPIO_TypeDef` structure. The function will update this pointer to point to the appropriate GPIO port (e.g., `GPIOA`, `GPIOB`).
 
-- **pin:**
-
-  
+- **pin:** A pointer to an unsigned integer. The function will store the extracted pin number (0 to 15) in this variable.
 
 **Example code**
 
 ```c
+GPIO_TypeDef *port;
+unsigned int pinNum;
 
+ecPinmap(PA_5, &port, &pinNum);
+// After execution, 'port' points to GPIOA and 'pinNum' contains 5.
 ```
 
 
